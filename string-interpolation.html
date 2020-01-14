@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p>{{numOne + 5}}</p>
+            <p>{{numTwo - 5}}</p>
+            <p>{{numThree * 5}}</p>
+            <blockquote>{{ isActive ? message : 'not Active' }}</blockquote>
+        </div>
+        <script>
+            new Vue({
+                el : '#app',
+                data : {
+                    numOne : 5,
+                    numTwo : 10,
+                    numThree : 2,
+                    isActive : true,
+                    message : 'You can do almost all stuffs using string interpolation'
+                }
+            })
+        </script>
+    </body>
+</html>
