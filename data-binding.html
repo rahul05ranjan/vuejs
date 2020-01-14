@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-bind:title="name">{{ name }}</p>
+            <p :title="email">{{ email }}</p>
+            <p :title="contact">{{ contact }}</p>
+            <blockquote>{{ message }}</blockquote>
+        </div>
+        <script>
+            new Vue({
+                el : '#app',
+                data : {
+                    name : 'Rahul Kumar',
+                    email : 'rahul@goaidev.com',
+                    contact : '9592443536',
+                    message : 'you can see, short hand :title for binding. you can use both v-bind or :.'
+                }
+            })
+        </script>
+    </body>
+</html>
