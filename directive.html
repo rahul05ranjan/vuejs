@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1">
+                        <a class="btn btn-success" @click="number++">+</a>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" :value="number">
+                        <blockquote v-html="message"></blockquote>
+                    </div>
+                    <div class="col-md-2">
+                        <a class="btn btn-danger" @click="number--">-</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <ul>
+                            <li v-for="name in names" v-text="name"></li>
+                        </ul>
+                        <input type="text" v-model="newName">
+                        <button class="btn btn-primary" @click="addName">Add Name</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            new Vue({
+                el : '#app',
+                data : {
+                    number : 0,
+                    message : 'Click on <strong> + </strong> and <strong>-</strong>',
+                    names : ['Rahul', 'Rajeev', 'Amit', 'Praveen'],
+                    isNameShow : true,
+                    newName : ''
+                },
+                methods: {
+                    addName(){
+                        this.names.push(this.newName);
+                        this.newName = '';
+                    }
+                },
+            })
+        </script>
+    </body>
+</html>
